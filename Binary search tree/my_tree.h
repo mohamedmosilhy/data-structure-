@@ -61,15 +61,15 @@ class MyTree{
         Node<T>* magic_insert_node(Node<T>* root,Node<T> node){
             if (!root)
             {   
-                return new Node<T>(root->data);
+                return new Node<T>(node.data);
             }
             if (node.data > root->data)
             { 
-                root->right = magic_insert_node(root->right,node.data); 
+                root->right = magic_insert_node(root->right,node); 
             }
             else if (node.data < root->data)
             {
-                root->left = magic_insert_node(root->left,node.data);
+                root->left = magic_insert_node(root->left,node);
             }
             return root;
         }
